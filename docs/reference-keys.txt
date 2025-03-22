@@ -1,5 +1,13 @@
 about
 usage
 introduction-to-r
-rrstudio-basics
+r-basics
+installation-for-both-r-and-rstudio
+introduction-to-rstudio-interface
+data-types
+character-data-type
+numeric-data-type
+boolean-data-type
+r-packages
+data-import-from-various-sources
 references

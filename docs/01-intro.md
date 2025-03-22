@@ -6,9 +6,9 @@ Since its implementation it has gained popularity over time by find use cases in
 
 What makes R powerful is the idea of packages which is simply a collection of functions and data that have been packaged in a way that makes it easy for use and share with the large community. You will learn how to install and load packages in this module. For those who will advance in the series, you might as well learn how to create them as well.
 
-## R/Rstudio Basics
+## R Basics
 
-**Installation for both R and Rstudio**
+### Installation for both R and Rstudio**
 
 The best way to learn programming in any language is through practice, and R is no different, therefore, I highly recommend you download both R and Rstudio before proceeding to other sections of the book.
 
@@ -18,17 +18,17 @@ Install R software @ https://cran.r-project.org/bin/windows/base/
 
 Install Rstudio @ https://posit.co/download/rstudio-desktop/
 
-**Introduction to Rstudio Interface**
+### Introduction to Rstudio Interface**
 
 Familiarize with the Rstudio user interface which we will use heavily. There are other editors that you can use like VS code, but Rstudio is widely used in the industry.
 
 Make use of the menu bar at the top to navigate between various tasks eg opening a new R script, restarting an R session among other activities.
 
-**Data types**
+### Data types
 
 We need to understand basic data types before delving into complicated data structures. This will serve as a foundation to our future analysis of data in various contexts. There are two main categories of data types, simple data types and compound data types. Simple data types include, character, numeric, Boolean, complex, and raw data types while complex data types include lists, data frames environments etc.
 
-**Character data type**
+#### Character data type**
 
 This contain text data. You enclose them with either single or double quotes.
 
@@ -51,12 +51,19 @@ character2
 ## [1] "Man"
 ```
 
+#### Numeric data type
 
-**R packages**
+#### Boolean data type
+
+
+
+
+
+### R packages
 
 A brief introduction to what packages are, how to install and load them into the system. (we will not cover how to make your own package at this stage yet)
 
-**Data Import from various sources**
+### Data Import from various sources**
 
 How do you get your data into the R system. There are various ways of achieving this. We shall sample few methods.
 
