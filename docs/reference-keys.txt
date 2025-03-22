@@ -1,7 +1,5 @@
 about
 usage
-render-book
-preview-book
 introduction-to-r
-learning-outcomesobjectives
+rrstudio-basics
 references

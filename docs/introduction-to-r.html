@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 2 Introduction to R | An Introduction to R for Data Science" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="https://rikoprogrammer.github.io/EPM_R_book_01/images/logoM.jpg" />
   <meta property="og:description" content="This is an introductory text to programming with R using Data Science Case Studies." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 2 Introduction to R | An Introduction to R for Data Science" />
   
   <meta name="twitter:description" content="This is an introductory text to programming with R using Data Science Case Studies." />
-  
+  <meta name="twitter:image" content="https://rikoprogrammer.github.io/EPM_R_book_01/images/logoM.jpg" />
 
 <meta name="author" content="Eric Odongo" />
 
@@ -143,12 +143,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>2</b> Introduction to R</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#learning-outcomesobjectives"><i class="fa fa-check"></i><b>2.1</b> LEARNING OUTCOMES/OBJECTIVES</a></li>
+<li class="chapter" data-level="2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#rrstudio-basics"><i class="fa fa-check"></i><b>2.1</b> R/Rstudio Basics</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
 <li class="divider"></li>
@@ -176,15 +174,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This is an introductory module in which we will learn the basics of R/Rstudio from installation to loading your first data file into R. R is a high level language that was developed by statisticians and was meant for statisticians. The two statisticians who came up with the language are Rose Ihaka and Robert Gentleman from the University of Aukland Australia.</p>
 <p>Since its implementation it has gained popularity over time by find use cases in new emerging fields like Data Science and lately in the Pharmaceutical industry now sharing almost an equal place with SAS (Statistical Analysis System) which has been the standard programming language in the Pharma industry for a very long time.</p>
 <p>What makes R powerful is the idea of packages which is simply a collection of functions and data that have been packaged in a way that makes it easy for use and share with the large community. You will learn how to install and load packages in this module. For those who will advance in the series, you might as well learn how to create them as well.</p>
-<div id="learning-outcomesobjectives" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> LEARNING OUTCOMES/OBJECTIVES<a href="introduction-to-r.html#learning-outcomesobjectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="rrstudio-basics" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> R/Rstudio Basics<a href="introduction-to-r.html#rrstudio-basics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>i) Installation for both R and Rstudio</strong></p>
+<p>The best way to learn programming in any language is through practice, and R is no different, therefore, I highly recommend you download both R and Rstudio before proceeding to other sections of the book.</p>
+<p>R is the programming language while Rstudio is an interface/editor that helps you to program in R. You can do without it but having it will greatly improve your productivity. There are a plethora of editors to choose from ranging from VS Code to the more modern ones like Positron but in this book I will be using Rstudio. You are free to explore other editors in your own free time.</p>
 <p>Install R software @ <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a></p>
 <p>Install Rstudio @ <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a></p>
 <p><strong>ii) Introduction to Rstudio Interface</strong></p>
 <p>Familiarize with the Rstudio user interface which we will use heavily. There are other editors that you can use like VS code, but Rstudio is widely used in the industry.</p>
+<p>Make use of the menu bar at the top to navigate between various tasks eg opening a new R script, restarting an R session among other activities.</p>
 <p><strong>iii) Data types</strong></p>
-<p>We need to understand basic data types before delving into complicated data structures. This will serve as a foundation to our future analysis of data in various contexts.</p>
+<p>We need to understand basic data types before delving into complicated data structures. This will serve as a foundation to our future analysis of data in various contexts. There are two main categories of data types, simple data types and compound data types. Simple data types include, character, numeric, Boolean, complex, and raw data types while complex data types include lists, data frames environments etc.</p>
+<p><strong>a. Character data type</strong></p>
+<p>This contain text data. You enclose them with either single or double quotes.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction-to-r.html#cb1-1" tabindex="-1"></a>character1 <span class="ot">&lt;-</span> <span class="st">&#39;Cow&#39;</span></span>
+<span id="cb1-2"><a href="introduction-to-r.html#cb1-2" tabindex="-1"></a>character1</span></code></pre></div>
+<pre><code>## [1] &quot;Cow&quot;</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introduction-to-r.html#cb3-1" tabindex="-1"></a>character2 <span class="ot">&lt;-</span> <span class="st">&#39;Man&#39;</span></span>
+<span id="cb3-2"><a href="introduction-to-r.html#cb3-2" tabindex="-1"></a>character2</span></code></pre></div>
+<pre><code>## [1] &quot;Man&quot;</code></pre>
 <p><strong>iv) R packages</strong></p>
 <p>A brief introduction to what packages are, how to install and load them into the system. (we will not cover how to make your own package at this stage yet)</p>
 <p><strong>V) Data Import from various sources</strong></p>
