@@ -1,7 +1,7 @@
 
 # Introduction to R 
 
-This is an introductory module in which we will learn the basics of R/Rstudio from installation to loading your first data file into R. R is a high level language that was developed by statisticians and was meant for statisticians. The two statisticians who came up with the language are Rose Ihaka and Robert Gentleman from the University of Aukland Australia. 
+This is an introductory module in which we will learn the basics of R/Rstudio from installation to loading your first data file into R. R is a high level language that was developed by statisticians and was meant for statisticians. The two statisticians who came up with the language are Rose Ihaka and Robert Gentleman from the University of Auckland Australia. 
 
 Since its implementation it has gained popularity over time by find use cases in new emerging fields like Data Science and lately in the Pharmaceutical industry now sharing almost an equal place with SAS (Statistical Analysis System) which has been the standard programming language in the Pharma industry for a very long time.
 
@@ -15,9 +15,9 @@ The best way to learn programming in any language is through practice, and R is 
 
 R is the programming language while Rstudio is an interface/editor that helps you to program in R. You can do without it but having it will greatly improve your productivity. There are a plethora of editors to choose from ranging from VS Code to the more modern ones like Positron but in this book I will be using Rstudio. You are free to explore other editors in your own free time.
 
-Install R software @ https://cran.r-project.org/bin/windows/base/
+Install R software: https://cran.r-project.org/bin/windows/base/
 
-Install Rstudio @ https://posit.co/download/rstudio-desktop/
+Install Rstudio: https://posit.co/download/rstudio-desktop/
 
 ### Introduction to Rstudio Interface
 
@@ -40,9 +40,27 @@ character1
 
 character2 <- 'Man'
 character2
+
 ```
 
 #### Numeric data type
+
+We have two sub-classes under this data type; integer and double/float. Integers are whole numbers without the decimal part while doubles or floats contain decimals. To create them we simply assign them to a variable without quotation marks as below.
+
+```{r}
+
+# create an integer
+
+int_number <- 4L
+int_number
+
+# create a float
+
+float_number <- 3.24
+float_number
+
+```
+
 
 #### Boolean data type
 
@@ -52,16 +70,27 @@ character2
 
 ### R packages
 
-A brief introduction to what packages are, how to install and load them into the system. (we will not cover how to make your own package at this stage yet)
+A brief introduction to what packages are, how to install and load them into the system. (we will not cover how to make your own package at this stage yet). An R package is a fundamental unit of R code, with a package you can easily share your work with other people who might be interested in using functions within your package.
+
+Most R packages are hosted on CRAN (Comprehensive R Archive Network), though we have other hosting places for R packages like Github or BioConductor. For our purposes in this book we shall only use packages from CRAN and in few cases use packages from GitHub.
+
+There are two ways of installing packages; either via the graphical user interface in Rstudio or by writing code within R.
+
+If we want to install via code we simply issue the command below either in the console or in an R script.
+
+```{r, eval=FALSE}
+install.packages('package_name')
+
+# package_name is the actual name of the package you want to install
+```
+
 
 ### Data Import from various sources
 
-How do you get your data into the R system. There are various ways of achieving this. We shall sample few methods.
+How do you get your data into the R system. There are various ways of achieving this. We shall sample few methods. We have R base functions for achieving this and we also have functions from packages like readr or haven that we can use.
 
 
-**N/B: Please install both R and Rstudio before our class.**
 
-*Useful resource*
 
-https://rstudio-education.github.io/hopr/
+
 
