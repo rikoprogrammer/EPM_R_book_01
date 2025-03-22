@@ -1,8 +1,12 @@
-book_filename: An Introduction to R for Data Scinece
+
+book_filename: "An Introduction to R for Data Scinece"
 delete_merged_file: true
 rmd_files:
 - index.Rmd
 - 01-intro.Rmd
+- 03-program.Rmd
+- 04-data-science.Rmd
+- 05-communicate.Rmd
 - 06-references.Rmd
 
 output_dir: docs
