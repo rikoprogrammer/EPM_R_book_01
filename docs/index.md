@@ -22,7 +22,7 @@ This is an introductory text to programming in R. In this text you will learn ab
 
 ## Usage 
 
-This book was originally meant to be used as a learning resource for students at EPM Square Analytics but it might evolve over time to include many topics relevant to anyone willing to learn R and apply to their unique use cases.
+This book was originally meant to be used as a learning resource for students at EPM Square Analytics but it might evolve over time to include many topics relevant to anyone willing to learn R and apply to their unique use cases. If you want to view our other services that we offer at EPM please visit our website: https://epm-square-analytics.netlify.app/
 
 
 
