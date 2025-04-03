@@ -176,6 +176,33 @@ logical_vec2
 ## [1] FALSE FALSE FALSE  TRUE  TRUE
 ```
 
+To check the data type of any vector in R we use the ```mode()``` function.
+
+
+``` r
+mode(vector1)
+```
+
+```
+## [1] "numeric"
+```
+
+``` r
+mode(animals)
+```
+
+```
+## [1] "character"
+```
+
+``` r
+mode(logical_vec)
+```
+
+```
+## [1] "logical"
+```
+
 
 
 ### R packages
@@ -204,12 +231,14 @@ How do you get your data into the R system. There are various ways of achieving 
 ``` r
 # to load the csv file into R simply use read.csv command
 
-my_data <- read.csv("filename.csv") 
-
-#where filename is the actual name of your file
+my_data <- read.csv("filename.csv") #where filename is the actual name of your file
 
 # this will load the data into memory and assign it to an an object called my_data. This object is formally called a data frame in R.
 ```
+
+We can use related functions to import Excel files, SPSS files, SAS files etc. The ```haven``` and the ```readr``` packages provide modern functions that makes it easy to import as well as to write files from various systems. We will look at them in more detail in chapters three and four.
+
+### Exercises
 
 
 

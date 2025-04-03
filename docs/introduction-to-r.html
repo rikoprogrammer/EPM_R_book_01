@@ -154,6 +154,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-types"><i class="fa fa-check"></i><b>2.1.4</b> Data types</a></li>
 <li class="chapter" data-level="2.1.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#r-packages"><i class="fa fa-check"></i><b>2.1.5</b> R packages</a></li>
 <li class="chapter" data-level="2.1.6" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-import-from-various-sources"><i class="fa fa-check"></i><b>2.1.6</b> Data Import from various sources</a></li>
+<li class="chapter" data-level="2.1.7" data-path="introduction-to-r.html"><a href="introduction-to-r.html#exercises"><i class="fa fa-check"></i><b>2.1.7</b> Exercises</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="programming-with-r.html"><a href="programming-with-r.html"><i class="fa fa-check"></i><b>3</b> Programming with R</a>
@@ -277,6 +278,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb18-5"><a href="introduction-to-r.html#cb18-5" tabindex="-1"></a>logical_vec2 <span class="ot">&lt;-</span> x <span class="sc">&gt;</span> <span class="dv">5</span></span>
 <span id="cb18-6"><a href="introduction-to-r.html#cb18-6" tabindex="-1"></a>logical_vec2</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE</code></pre>
+<p>To check the data type of any vector in R we use the <code>mode()</code> function.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="introduction-to-r.html#cb20-1" tabindex="-1"></a><span class="fu">mode</span>(vector1)</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="introduction-to-r.html#cb22-1" tabindex="-1"></a><span class="fu">mode</span>(animals)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="introduction-to-r.html#cb24-1" tabindex="-1"></a><span class="fu">mode</span>(logical_vec)</span></code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
 </div>
 </div>
 <div id="r-packages" class="section level3 hasAnchor" number="2.1.5">
@@ -285,20 +293,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Most R packages are hosted on CRAN (Comprehensive R Archive Network), though we have other hosting places for R packages like Github or BioConductor. For our purposes in this book we shall only use packages from CRAN and in few cases use packages from GitHub.</p>
 <p>There are two ways of installing packages; either via the graphical user interface in Rstudio or by writing code within R.</p>
 <p>If we want to install via code we simply issue the command below either in the console or in an R script.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="introduction-to-r.html#cb20-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;package_name&#39;</span>)</span>
-<span id="cb20-2"><a href="introduction-to-r.html#cb20-2" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="introduction-to-r.html#cb20-3" tabindex="-1"></a><span class="co"># package_name is the actual name of the package you want to install</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="introduction-to-r.html#cb26-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;package_name&#39;</span>)</span>
+<span id="cb26-2"><a href="introduction-to-r.html#cb26-2" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="introduction-to-r.html#cb26-3" tabindex="-1"></a><span class="co"># package_name is the actual name of the package you want to install</span></span></code></pre></div>
 </div>
 <div id="data-import-from-various-sources" class="section level3 hasAnchor" number="2.1.6">
 <h3><span class="header-section-number">2.1.6</span> Data Import from various sources<a href="introduction-to-r.html#data-import-from-various-sources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>How do you get your data into the R system. There are various ways of achieving this. We shall sample few methods. We have R base functions for achieving this and we also have functions from packages like readr or haven that we can use. To follow a long you will need some data saved locally on your computer, to simplify things make sure the data you have is comma separated (csv) file. A quick place to get some data sets for use is the kaggle website: <a href="https://www.kaggle.com/datasets" class="uri">https://www.kaggle.com/datasets</a>. Save the data in your current working directory for easier access. In case you don’t know how to set a working directory simply type <code>getwd()</code> in the console to see where your current directory is and if you want to change it simply issue the command <code>setwd("specify the path to the desired folder using either double backslashes or single forward slashes")</code> e.g <code>setwd("D:/old data/LEARN/Clinical SAS/Readings")</code>.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introduction-to-r.html#cb21-1" tabindex="-1"></a><span class="co"># to load the csv file into R simply use read.csv command</span></span>
-<span id="cb21-2"><a href="introduction-to-r.html#cb21-2" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="introduction-to-r.html#cb21-3" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;filename.csv&quot;</span>) </span>
-<span id="cb21-4"><a href="introduction-to-r.html#cb21-4" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="introduction-to-r.html#cb21-5" tabindex="-1"></a><span class="co">#where filename is the actual name of your file</span></span>
-<span id="cb21-6"><a href="introduction-to-r.html#cb21-6" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="introduction-to-r.html#cb21-7" tabindex="-1"></a><span class="co"># this will load the data into memory and assign it to an an object called my_data. This object is formally called a data frame in R.</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="introduction-to-r.html#cb27-1" tabindex="-1"></a><span class="co"># to load the csv file into R simply use read.csv command</span></span>
+<span id="cb27-2"><a href="introduction-to-r.html#cb27-2" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="introduction-to-r.html#cb27-3" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;filename.csv&quot;</span>) <span class="co">#where filename is the actual name of your file</span></span>
+<span id="cb27-4"><a href="introduction-to-r.html#cb27-4" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="introduction-to-r.html#cb27-5" tabindex="-1"></a><span class="co"># this will load the data into memory and assign it to an an object called my_data. This object is formally called a data frame in R.</span></span></code></pre></div>
+<p>We can use related functions to import Excel files, SPSS files, SAS files etc. The <code>haven</code> and the <code>readr</code> packages provide modern functions that makes it easy to import as well as to write files from various systems. We will look at them in more detail in chapters three and four.</p>
+</div>
+<div id="exercises" class="section level3 hasAnchor" number="2.1.7">
+<h3><span class="header-section-number">2.1.7</span> Exercises<a href="introduction-to-r.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 </div>
 </div>
