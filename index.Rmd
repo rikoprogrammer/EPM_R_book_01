@@ -6,7 +6,7 @@ site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 url: https://rikoprogrammer.github.io/EPM_R_book_01/
-cover-image: images/logoM.jpg
+cover-image: images/cover_image.png
 description: |
   This is an introductory text to programming with R using Data Science Case Studies.
 link-citations: yes

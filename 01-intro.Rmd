@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 
 # Introduction to R 
 
@@ -25,9 +30,35 @@ Familiarize with the Rstudio user interface which we will use heavily. There are
 
 Make use of the menu bar at the top to navigate between various tasks eg opening a new R script, restarting an R session among other activities.
 
+The interface has four main panes - Editor pane, Console, Environment and History pane. We have several sub-panes within each of the main panes.
+
 ### Data types
 
-We need to understand basic data types before delving into complicated data structures. This will serve as a foundation to our future analysis of data in various contexts. There are two main categories of data types, simple data types and compound data types. Simple data types include, character, numeric, Boolean, complex, and raw data types while complex data types include lists, data frames environments etc.
+We need to understand basic data types before delving into complicated data structures. This will serve as a foundation to our future analysis of data in various contexts. There are two main categories of data types, simple data types and compound data types. Simple data types include, character, numeric, Boolean, complex, and raw data types while complex data types include lists, data frames environments etc. We will not discuss the complex and raw data types as they are not useful in data science/data analysis tasks.
+
+There are no true scalars in R, even what you might think to be a scalar is actually a vector of length one. Vectors will be the basing building blocks for constructing other data structures. We create them using various methods; the common ones being via the c() command, using seq() command, using the : notation, etc, see examples below.
+
+```{r}
+# using the c() command
+
+vector1 <- c(1,2,4,5,6,9)
+vector1
+
+#using the seq() command
+
+vector2 <- seq(1:10)
+vector2
+
+#use the : notation
+
+vector3 <- 2:20
+vector3
+```
+
+**Getting help**
+
+We can get help on how to use a function within R by type ?function name or help(function name). For example if you want to inspect the seq() function to see what kind of arguments it takes just type ?seq(). You try it as a form of exercise.
+
 
 #### Character data type
 
@@ -35,11 +66,13 @@ This contain text data. You enclose them with either single or double quotes.
 
 ```{r}
 
-character1 <- 'Cow'
-character1
+animals <- c("Cow","Dog","Cat")
+animals
 
-character2 <- 'Man'
-character2
+names <- c("Oscar","Eric","Ashley")
+names
+
+#as an exercise you can try creating more character vectors
 
 ```
 

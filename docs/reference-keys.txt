@@ -11,7 +11,8 @@ boolean-data-type
 r-packages
 data-import-from-various-sources
 programming-with-r
-compund-data-structures-in-detail
+compound-data-structures-in-detail
 doing-data-science-with-r
 communicate-with-r
+introduction-to-rmarkdown
 references
