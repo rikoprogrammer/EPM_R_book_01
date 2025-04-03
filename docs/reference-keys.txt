@@ -4,6 +4,7 @@ introduction-to-r
 r-basics
 installation-for-both-r-and-rstudio
 introduction-to-rstudio-interface
+creating-objects-assignment-and-naming-things-in-r
 data-types
 character-data-type
 numeric-data-type

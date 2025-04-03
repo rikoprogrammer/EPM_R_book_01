@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 
 # Introduction to R 
 
@@ -25,9 +30,69 @@ Familiarize with the Rstudio user interface which we will use heavily. There are
 
 Make use of the menu bar at the top to navigate between various tasks eg opening a new R script, restarting an R session among other activities.
 
+The interface has four main panes - Editor pane, Console, Environment and History pane. We have several sub-panes within each of the main panes.
+
+### Creating objects, assignment and naming things in R
+
+Almost everything you will work with in R, is an object, from vectors, data frames, lists or even environments. To create an object in R, simply come up with a name to call your object and assign it some value. If you are familiar with other programming languages perhaps you know some rules for naming objects, but in case you don't know or want to refresh your memory here are a few suggestions;
+
+- names should not begin with a number or a special character
+
+- names should not have spaces
+
+**N/B** - R is case sensitive by the way so Cow and cow are two different names.
+
+For a more extensive advise on naming objects please refer to this style guide: https://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html
+
+To assign a value to an object we use the assignment operator <- or =, though using the former operator is highly recommended.
+
+If you want to write comments in R use the hash symbol #. Anything written after the hash symbol is not evaluated as code.
+
+
 ### Data types
 
-We need to understand basic data types before delving into complicated data structures. This will serve as a foundation to our future analysis of data in various contexts. There are two main categories of data types, simple data types and compound data types. Simple data types include, character, numeric, Boolean, complex, and raw data types while complex data types include lists, data frames environments etc.
+We need to understand basic data types before delving into complicated data structures. This will serve as a foundation to our future analysis of data in various contexts. There are two main categories of data types, simple data types and compound data types. Simple data types include, character, numeric, Boolean, complex, and raw data types while complex data types include lists, data frames environments etc. We will not discuss the complex and raw data types as they are not useful in data science/data analysis tasks.
+
+There are no true scalars in R, even what you might think to be a scalar is actually a vector of length one. Vectors will be the basing building blocks for constructing other data structures. We create them using various methods; the common ones being via the c() command, using seq() command, using the : notation, etc, see examples below.
+
+
+``` r
+# using the c() command
+
+vector1 <- c(1,2,4,5,6,9)
+vector1
+```
+
+```
+## [1] 1 2 4 5 6 9
+```
+
+``` r
+#using the seq() command
+
+vector2 <- seq(1:10)
+vector2
+```
+
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10
+```
+
+``` r
+#use the : notation
+
+vector3 <- 2:20
+vector3
+```
+
+```
+##  [1]  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+```
+
+**Getting help**
+
+We can get help on how to use a function within R by type ?function name or help(function name). For example if you want to inspect the seq() function to see what kind of arguments it takes just type ?seq(). You try it as a form of exercise.
+
 
 #### Character data type
 
@@ -35,21 +100,25 @@ This contain text data. You enclose them with either single or double quotes.
 
 
 ``` r
-character1 <- 'Cow'
-character1
+animals <- c("Cow","Dog","Cat")
+animals
 ```
 
 ```
-## [1] "Cow"
+## [1] "Cow" "Dog" "Cat"
 ```
 
 ``` r
-character2 <- 'Man'
-character2
+names <- c("Oscar","Eric","Ashley")
+names
 ```
 
 ```
-## [1] "Man"
+## [1] "Oscar"  "Eric"   "Ashley"
+```
+
+``` r
+#as an exercise you can try creating more character vectors
 ```
 
 #### Numeric data type
@@ -60,35 +129,58 @@ We have two sub-classes under this data type; integer and double/float. Integers
 ``` r
 # create an integer
 
-int_number <- 4L
-int_number
+int_numbers <- c(4L, 3L, 2L, 1L)
+int_numbers
 ```
 
 ```
-## [1] 4
+## [1] 4 3 2 1
 ```
 
 ``` r
 # create a float
 
-float_number <- 3.24
-float_number
+float_numbers <- c(3.24, 1.1, 0.54)
+float_numbers
 ```
 
 ```
-## [1] 3.24
+## [1] 3.24 1.10 0.54
 ```
 
 
 #### Boolean data type
 
+This data type results from asking logical questions, is x less than 2? The answer is either ```TRUE``` or ```FALSE```. Those values must be written in capital as shown and without quotation marks.
 
+
+``` r
+logical_vec <- c(TRUE, FALSE, TRUE, TRUE, FALSE)
+logical_vec
+```
+
+```
+## [1]  TRUE FALSE  TRUE  TRUE FALSE
+```
+
+``` r
+# create a numeric vector and check whether each element in the vector is greater than 5. This will create for you a logical vector
+
+x <- c(5, 1, 4, 10, 6)
+
+logical_vec2 <- x > 5
+logical_vec2
+```
+
+```
+## [1] FALSE FALSE FALSE  TRUE  TRUE
+```
 
 
 
 ### R packages
 
-A brief introduction to what packages are, how to install and load them into the system. (we will not cover how to make your own package at this stage yet). An R package is a fundamental unit of R code, with a package you can easily share your work with other people who might be interested in using functions within your package.
+A brief introduction to what packages are, how to install and load them into the system. (we will not cover how to make your own package at this stage yet). An R package is a fundamental unit of R code, with a package you can easily share your work with other people who might be interested in using functions within your package. Its basically a collection of functions and data meant to perform certain specific tasks.
 
 Most R packages are hosted on CRAN (Comprehensive R Archive Network), though we have other hosting places for R packages like Github or BioConductor. For our purposes in this book we shall only use packages from CRAN and in few cases use packages from GitHub.
 

@@ -1,7 +1,7 @@
 --- 
 title: "An Introduction to R for Data Science"
 author: "Eric Odongo"
-date: "2025-03-22"
+date: "2025-04-03"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

@@ -23,7 +23,7 @@
 <meta name="author" content="Eric Odongo" />
 
 
-<meta name="date" content="2025-03-22" />
+<meta name="date" content="2025-04-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -150,9 +150,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#installation-for-both-r-and-rstudio"><i class="fa fa-check"></i><b>2.1.1</b> Installation for both R and Rstudio</a></li>
 <li class="chapter" data-level="2.1.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#introduction-to-rstudio-interface"><i class="fa fa-check"></i><b>2.1.2</b> Introduction to Rstudio Interface</a></li>
-<li class="chapter" data-level="2.1.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-types"><i class="fa fa-check"></i><b>2.1.3</b> Data types</a></li>
-<li class="chapter" data-level="2.1.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#r-packages"><i class="fa fa-check"></i><b>2.1.4</b> R packages</a></li>
-<li class="chapter" data-level="2.1.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-import-from-various-sources"><i class="fa fa-check"></i><b>2.1.5</b> Data Import from various sources</a></li>
+<li class="chapter" data-level="2.1.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#creating-objects-assignment-and-naming-things-in-r"><i class="fa fa-check"></i><b>2.1.3</b> Creating objects, assignment and naming things in R</a></li>
+<li class="chapter" data-level="2.1.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-types"><i class="fa fa-check"></i><b>2.1.4</b> Data types</a></li>
+<li class="chapter" data-level="2.1.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#r-packages"><i class="fa fa-check"></i><b>2.1.5</b> R packages</a></li>
+<li class="chapter" data-level="2.1.6" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-import-from-various-sources"><i class="fa fa-check"></i><b>2.1.6</b> Data Import from various sources</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="programming-with-r.html"><a href="programming-with-r.html"><i class="fa fa-check"></i><b>3</b> Programming with R</a>
@@ -203,50 +204,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">2.1.2</span> Introduction to Rstudio Interface<a href="introduction-to-r.html#introduction-to-rstudio-interface" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Familiarize with the Rstudio user interface which we will use heavily. There are other editors that you can use like VS code, but Rstudio is widely used in the industry.</p>
 <p>Make use of the menu bar at the top to navigate between various tasks eg opening a new R script, restarting an R session among other activities.</p>
+<p>The interface has four main panes - Editor pane, Console, Environment and History pane. We have several sub-panes within each of the main panes.</p>
 </div>
-<div id="data-types" class="section level3 hasAnchor" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> Data types<a href="introduction-to-r.html#data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We need to understand basic data types before delving into complicated data structures. This will serve as a foundation to our future analysis of data in various contexts. There are two main categories of data types, simple data types and compound data types. Simple data types include, character, numeric, Boolean, complex, and raw data types while complex data types include lists, data frames environments etc.</p>
-<div id="character-data-type" class="section level4 hasAnchor" number="2.1.3.1">
-<h4><span class="header-section-number">2.1.3.1</span> Character data type<a href="introduction-to-r.html#character-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>This contain text data. You enclose them with either single or double quotes.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction-to-r.html#cb1-1" tabindex="-1"></a>character1 <span class="ot">&lt;-</span> <span class="st">&#39;Cow&#39;</span></span>
-<span id="cb1-2"><a href="introduction-to-r.html#cb1-2" tabindex="-1"></a>character1</span></code></pre></div>
-<pre><code>## [1] &quot;Cow&quot;</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introduction-to-r.html#cb3-1" tabindex="-1"></a>character2 <span class="ot">&lt;-</span> <span class="st">&#39;Man&#39;</span></span>
-<span id="cb3-2"><a href="introduction-to-r.html#cb3-2" tabindex="-1"></a>character2</span></code></pre></div>
-<pre><code>## [1] &quot;Man&quot;</code></pre>
+<div id="creating-objects-assignment-and-naming-things-in-r" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Creating objects, assignment and naming things in R<a href="introduction-to-r.html#creating-objects-assignment-and-naming-things-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Almost everything you will work with in R, is an object, from vectors, data frames, lists or even environments. To create an object in R, simply come up with a name to call your object and assign it some value. If you are familiar with other programming languages perhaps you know some rules for naming objects, but in case you don’t know or want to refresh your memory here are a few suggestions;</p>
+<ul>
+<li><p>names should not begin with a number or a special character</p></li>
+<li><p>names should not have spaces</p></li>
+</ul>
+<p><strong>N/B</strong> - R is case sensitive by the way so Cow and cow are two different names.</p>
+<p>For a more extensive advise on naming objects please refer to this style guide: <a href="https://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html" class="uri">https://web.stanford.edu/class/cs109l/unrestricted/resources/google-style.html</a></p>
+<p>To assign a value to an object we use the assignment operator &lt;- or =, though using the former operator is highly recommended.</p>
+<p>If you want to write comments in R use the hash symbol #. Anything written after the hash symbol is not evaluated as code.</p>
 </div>
-<div id="numeric-data-type" class="section level4 hasAnchor" number="2.1.3.2">
-<h4><span class="header-section-number">2.1.3.2</span> Numeric data type<a href="introduction-to-r.html#numeric-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>We have two sub-classes under this data type; integer and double/float. Integers are whole numbers without the decimal part while doubles or floats contain decimals. To create them we simply assign them to a variable without quotation marks as below.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introduction-to-r.html#cb5-1" tabindex="-1"></a><span class="co"># create an integer</span></span>
+<div id="data-types" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Data types<a href="introduction-to-r.html#data-types" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We need to understand basic data types before delving into complicated data structures. This will serve as a foundation to our future analysis of data in various contexts. There are two main categories of data types, simple data types and compound data types. Simple data types include, character, numeric, Boolean, complex, and raw data types while complex data types include lists, data frames environments etc. We will not discuss the complex and raw data types as they are not useful in data science/data analysis tasks.</p>
+<p>There are no true scalars in R, even what you might think to be a scalar is actually a vector of length one. Vectors will be the basing building blocks for constructing other data structures. We create them using various methods; the common ones being via the c() command, using seq() command, using the : notation, etc, see examples below.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introduction-to-r.html#cb1-1" tabindex="-1"></a><span class="co"># using the c() command</span></span>
+<span id="cb1-2"><a href="introduction-to-r.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="introduction-to-r.html#cb1-3" tabindex="-1"></a>vector1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">9</span>)</span>
+<span id="cb1-4"><a href="introduction-to-r.html#cb1-4" tabindex="-1"></a>vector1</span></code></pre></div>
+<pre><code>## [1] 1 2 4 5 6 9</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introduction-to-r.html#cb3-1" tabindex="-1"></a><span class="co">#using the seq() command</span></span>
+<span id="cb3-2"><a href="introduction-to-r.html#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="introduction-to-r.html#cb3-3" tabindex="-1"></a>vector2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb3-4"><a href="introduction-to-r.html#cb3-4" tabindex="-1"></a>vector2</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introduction-to-r.html#cb5-1" tabindex="-1"></a><span class="co">#use the : notation</span></span>
 <span id="cb5-2"><a href="introduction-to-r.html#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="introduction-to-r.html#cb5-3" tabindex="-1"></a>int_number <span class="ot">&lt;-</span> <span class="dv">4</span><span class="dt">L</span></span>
-<span id="cb5-4"><a href="introduction-to-r.html#cb5-4" tabindex="-1"></a>int_number</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="introduction-to-r.html#cb7-1" tabindex="-1"></a><span class="co"># create a float</span></span>
-<span id="cb7-2"><a href="introduction-to-r.html#cb7-2" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="introduction-to-r.html#cb7-3" tabindex="-1"></a>float_number <span class="ot">&lt;-</span> <span class="fl">3.24</span></span>
-<span id="cb7-4"><a href="introduction-to-r.html#cb7-4" tabindex="-1"></a>float_number</span></code></pre></div>
-<pre><code>## [1] 3.24</code></pre>
+<span id="cb5-3"><a href="introduction-to-r.html#cb5-3" tabindex="-1"></a>vector3 <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb5-4"><a href="introduction-to-r.html#cb5-4" tabindex="-1"></a>vector3</span></code></pre></div>
+<pre><code>##  [1]  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20</code></pre>
+<p><strong>Getting help</strong></p>
+<p>We can get help on how to use a function within R by type ?function name or help(function name). For example if you want to inspect the seq() function to see what kind of arguments it takes just type ?seq(). You try it as a form of exercise.</p>
+<div id="character-data-type" class="section level4 hasAnchor" number="2.1.4.1">
+<h4><span class="header-section-number">2.1.4.1</span> Character data type<a href="introduction-to-r.html#character-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This contain text data. You enclose them with either single or double quotes.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="introduction-to-r.html#cb7-1" tabindex="-1"></a>animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Cow&quot;</span>,<span class="st">&quot;Dog&quot;</span>,<span class="st">&quot;Cat&quot;</span>)</span>
+<span id="cb7-2"><a href="introduction-to-r.html#cb7-2" tabindex="-1"></a>animals</span></code></pre></div>
+<pre><code>## [1] &quot;Cow&quot; &quot;Dog&quot; &quot;Cat&quot;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introduction-to-r.html#cb9-1" tabindex="-1"></a>names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Oscar&quot;</span>,<span class="st">&quot;Eric&quot;</span>,<span class="st">&quot;Ashley&quot;</span>)</span>
+<span id="cb9-2"><a href="introduction-to-r.html#cb9-2" tabindex="-1"></a>names</span></code></pre></div>
+<pre><code>## [1] &quot;Oscar&quot;  &quot;Eric&quot;   &quot;Ashley&quot;</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introduction-to-r.html#cb11-1" tabindex="-1"></a><span class="co">#as an exercise you can try creating more character vectors</span></span></code></pre></div>
 </div>
-<div id="boolean-data-type" class="section level4 hasAnchor" number="2.1.3.3">
-<h4><span class="header-section-number">2.1.3.3</span> Boolean data type<a href="introduction-to-r.html#boolean-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="numeric-data-type" class="section level4 hasAnchor" number="2.1.4.2">
+<h4><span class="header-section-number">2.1.4.2</span> Numeric data type<a href="introduction-to-r.html#numeric-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We have two sub-classes under this data type; integer and double/float. Integers are whole numbers without the decimal part while doubles or floats contain decimals. To create them we simply assign them to a variable without quotation marks as below.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="introduction-to-r.html#cb12-1" tabindex="-1"></a><span class="co"># create an integer</span></span>
+<span id="cb12-2"><a href="introduction-to-r.html#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="introduction-to-r.html#cb12-3" tabindex="-1"></a>int_numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span><span class="dt">L</span>, <span class="dv">3</span><span class="dt">L</span>, <span class="dv">2</span><span class="dt">L</span>, <span class="dv">1</span><span class="dt">L</span>)</span>
+<span id="cb12-4"><a href="introduction-to-r.html#cb12-4" tabindex="-1"></a>int_numbers</span></code></pre></div>
+<pre><code>## [1] 4 3 2 1</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introduction-to-r.html#cb14-1" tabindex="-1"></a><span class="co"># create a float</span></span>
+<span id="cb14-2"><a href="introduction-to-r.html#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="introduction-to-r.html#cb14-3" tabindex="-1"></a>float_numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.24</span>, <span class="fl">1.1</span>, <span class="fl">0.54</span>)</span>
+<span id="cb14-4"><a href="introduction-to-r.html#cb14-4" tabindex="-1"></a>float_numbers</span></code></pre></div>
+<pre><code>## [1] 3.24 1.10 0.54</code></pre>
+</div>
+<div id="boolean-data-type" class="section level4 hasAnchor" number="2.1.4.3">
+<h4><span class="header-section-number">2.1.4.3</span> Boolean data type<a href="introduction-to-r.html#boolean-data-type" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This data type results from asking logical questions, is x less than 2? The answer is either <code>TRUE</code> or <code>FALSE</code>. Those values must be written in capital as shown and without quotation marks.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="introduction-to-r.html#cb16-1" tabindex="-1"></a>logical_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb16-2"><a href="introduction-to-r.html#cb16-2" tabindex="-1"></a>logical_vec</span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE  TRUE  TRUE FALSE</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="introduction-to-r.html#cb18-1" tabindex="-1"></a><span class="co"># create a numeric vector and check whether each element in the vector is greater than 5. This will create for you a logical vector</span></span>
+<span id="cb18-2"><a href="introduction-to-r.html#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="introduction-to-r.html#cb18-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">6</span>)</span>
+<span id="cb18-4"><a href="introduction-to-r.html#cb18-4" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="introduction-to-r.html#cb18-5" tabindex="-1"></a>logical_vec2 <span class="ot">&lt;-</span> x <span class="sc">&gt;</span> <span class="dv">5</span></span>
+<span id="cb18-6"><a href="introduction-to-r.html#cb18-6" tabindex="-1"></a>logical_vec2</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE  TRUE  TRUE</code></pre>
 </div>
 </div>
-<div id="r-packages" class="section level3 hasAnchor" number="2.1.4">
-<h3><span class="header-section-number">2.1.4</span> R packages<a href="introduction-to-r.html#r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>A brief introduction to what packages are, how to install and load them into the system. (we will not cover how to make your own package at this stage yet). An R package is a fundamental unit of R code, with a package you can easily share your work with other people who might be interested in using functions within your package.</p>
+<div id="r-packages" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> R packages<a href="introduction-to-r.html#r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A brief introduction to what packages are, how to install and load them into the system. (we will not cover how to make your own package at this stage yet). An R package is a fundamental unit of R code, with a package you can easily share your work with other people who might be interested in using functions within your package. Its basically a collection of functions and data meant to perform certain specific tasks.</p>
 <p>Most R packages are hosted on CRAN (Comprehensive R Archive Network), though we have other hosting places for R packages like Github or BioConductor. For our purposes in this book we shall only use packages from CRAN and in few cases use packages from GitHub.</p>
 <p>There are two ways of installing packages; either via the graphical user interface in Rstudio or by writing code within R.</p>
 <p>If we want to install via code we simply issue the command below either in the console or in an R script.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introduction-to-r.html#cb9-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;package_name&#39;</span>)</span>
-<span id="cb9-2"><a href="introduction-to-r.html#cb9-2" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="introduction-to-r.html#cb9-3" tabindex="-1"></a><span class="co"># package_name is the actual name of the package you want to install</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="introduction-to-r.html#cb20-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;package_name&#39;</span>)</span>
+<span id="cb20-2"><a href="introduction-to-r.html#cb20-2" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="introduction-to-r.html#cb20-3" tabindex="-1"></a><span class="co"># package_name is the actual name of the package you want to install</span></span></code></pre></div>
 </div>
-<div id="data-import-from-various-sources" class="section level3 hasAnchor" number="2.1.5">
-<h3><span class="header-section-number">2.1.5</span> Data Import from various sources<a href="introduction-to-r.html#data-import-from-various-sources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="data-import-from-various-sources" class="section level3 hasAnchor" number="2.1.6">
+<h3><span class="header-section-number">2.1.6</span> Data Import from various sources<a href="introduction-to-r.html#data-import-from-various-sources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>How do you get your data into the R system. There are various ways of achieving this. We shall sample few methods. We have R base functions for achieving this and we also have functions from packages like readr or haven that we can use.</p>
 
 </div>
