@@ -291,7 +291,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="data-import-from-various-sources" class="section level3 hasAnchor" number="2.1.6">
 <h3><span class="header-section-number">2.1.6</span> Data Import from various sources<a href="introduction-to-r.html#data-import-from-various-sources" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>How do you get your data into the R system. There are various ways of achieving this. We shall sample few methods. We have R base functions for achieving this and we also have functions from packages like readr or haven that we can use.</p>
+<p>How do you get your data into the R system. There are various ways of achieving this. We shall sample few methods. We have R base functions for achieving this and we also have functions from packages like readr or haven that we can use. To follow a long you will need some data saved locally on your computer, to simplify things make sure the data you have is comma separated (csv) file. A quick place to get some data sets for use is the kaggle website: <a href="https://www.kaggle.com/datasets" class="uri">https://www.kaggle.com/datasets</a>. Save the data in your current working directory for easier access. In case you don’t know how to set a working directory simply type <code>getwd()</code> in the console to see where your current directory is and if you want to change it simply issue the command <code>setwd("specify the path to the desired folder using either double backslashes or single forward slashes")</code> e.g <code>setwd("D:/old data/LEARN/Clinical SAS/Readings")</code>.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introduction-to-r.html#cb21-1" tabindex="-1"></a><span class="co"># to load the csv file into R simply use read.csv command</span></span>
+<span id="cb21-2"><a href="introduction-to-r.html#cb21-2" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="introduction-to-r.html#cb21-3" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;filename.csv&quot;</span>) </span>
+<span id="cb21-4"><a href="introduction-to-r.html#cb21-4" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="introduction-to-r.html#cb21-5" tabindex="-1"></a><span class="co">#where filename is the actual name of your file</span></span>
+<span id="cb21-6"><a href="introduction-to-r.html#cb21-6" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="introduction-to-r.html#cb21-7" tabindex="-1"></a><span class="co"># this will load the data into memory and assign it to an an object called my_data. This object is formally called a data frame in R.</span></span></code></pre></div>
 
 </div>
 </div>

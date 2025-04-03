@@ -198,7 +198,19 @@ install.packages('package_name')
 
 ### Data Import from various sources
 
-How do you get your data into the R system. There are various ways of achieving this. We shall sample few methods. We have R base functions for achieving this and we also have functions from packages like readr or haven that we can use.
+How do you get your data into the R system. There are various ways of achieving this. We shall sample few methods. We have R base functions for achieving this and we also have functions from packages like readr or haven that we can use. To follow a long you will need some data saved locally on your computer, to simplify things make sure the data you have is comma separated (csv) file. A quick place to get some data sets for use is the kaggle website: https://www.kaggle.com/datasets. Save the data in your current working directory for easier access. In case you don't know how to set a working directory simply type ```getwd()``` in the console to see where your current directory is and if you want to change it simply issue the command ```setwd("specify the path to the desired folder using either double backslashes or single forward slashes")``` e.g ```setwd("D:/old data/LEARN/Clinical SAS/Readings")```.
+
+
+``` r
+# to load the csv file into R simply use read.csv command
+
+my_data <- read.csv("filename.csv") 
+
+#where filename is the actual name of your file
+
+# this will load the data into memory and assign it to an an object called my_data. This object is formally called a data frame in R.
+```
+
 
 
 
