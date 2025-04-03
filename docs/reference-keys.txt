@@ -14,6 +14,7 @@ data-import-from-various-sources
 exercises
 programming-with-r
 compound-data-structures-in-detail
+introduction-to-the-tidyverse
 doing-data-science-with-r
 communicate-with-r
 introduction-to-rmarkdown

@@ -5,9 +5,10 @@ rmd_files:
 - index.Rmd
 - 01-intro.Rmd
 - 03-program.Rmd
-- 04-data-science.Rmd
-- 05-communicate.Rmd
-- 06-references.Rmd
+- 04-tidyverse.Rmd
+- 05-data-science.Rmd
+- 06-communicate.Rmd
+- 07-references.Rmd
 
 output_dir: docs
 language:
